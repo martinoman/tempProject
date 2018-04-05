@@ -1,0 +1,42 @@
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-file-input/dist/angular-file-input.js"></script>
+<script src="//unpkg.com/angular/angular.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="container">
+  <div style="text-align: center">
+    <h3>Aktionera | Annonser ute</h3>
+    <hr>
+
+    <form ng-submit="searchCategory()" style="text-align: right;">
+    Search by category
+    <select ng-model="select" value="all">
+    <option ng-repeat="cat in categories">{{cat}}</option>
+    </select>
+    <input class="btn btn-default" type="submit" value="search">
+    </form>
+    <br>
+  </div>
+
+<div class="row">
+  <div class="col-sm-3" ng-repeat="ad in ads">
+    <div class="w3-card-2" ng-click="redirect(ad)">
+      <div class="card-body">
+      <img class="card-img-top" ng-src="{{ad.file_name}}" style="width:100%">
+        <h3 class="w3-container w3-center card-title">{{ad.name}}</h3>
+        <p class="w3-container w3-center card-text">{{ad.description}}</p>
+        <!-- <a href="#" class="btn btn-primary">Go to ad</a> -->
+        <h6 class="w3-container w3-center date">{{ad.date_created}}</h6>
+
+      </div>
+    </div>
+  </div>
+</div>
+  <hr>
+
+  <form ng-submit="done()">
+    <h4>Add an ad</h4>
+    <input class="btn btn-default" type="submit" value="Add an ad">
+  </form>
+  </div> 

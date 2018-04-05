@@ -1,0 +1,21 @@
+<div class="text-box col-md-4 col-md-offset-4" style="text-align: center">
+  <h1>Add an ad</h1>
+  <form ng-submit="done()">
+    <h3>Name of ad</h3>
+    <input class="form-control" type="text" ng-model="name" required autofocus>
+    <h3>Price</h3>
+    <input class="form-control" type="number" ng-model="price" min="1">
+    <h3>Category</h3>
+    <select class="form-control" ng-model="category">
+      <option value="car">Car</option>
+      <option value="bike">Bike</option>
+      <option value="pet">Pet</option>
+    </select>
+    <h3>Description</h3>
+    <textarea class="form-control" name="desc" rows="10" cols="30" ng-model="description"></textarea>
+    <br>
+    <input type="file" fileread="fileArray" accept="image/*">
+    <br>
+    <input class="btn btn-default" type="submit" id="loginOKBtn" value="Add ad">
+  </form>
+</div>

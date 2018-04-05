@@ -1,0 +1,30 @@
+<script src="//unpkg.com/angular/angular.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
+ <div class="container" style="text-align: center">
+ 	<h1>{{username}}</h1>
+ 	<hr>
+ 	<div class="row">
+ 		<h6 class="col-sm-3" style="text-align: center"><b>Username:</b> {{username}}</h6>
+ 		<h6 class="col-sm-3" style="text-align: center"><b>Email:</b> {{email}}</h6>
+ 		<h6 class="col-sm-3" style="text-align: center"><b>Address:</b> {{address}}</h6>
+ 		<h6 class="col-sm-3" style="text-align: center"><b>User ID:</b> {{userId}}</h6>
+ 	</div>
+  	<hr>
+	 	<h5><b>Your published ads</b></h5>
+	  <input type=submit class="btn btn-primary" ng-click="update()" value="Update ads"></input>
+
+	 <div class="col-sm-3" ng-repeat="ad in userAds track by $index">
+     <div class="w3-card-2" ng-click="redirect(ad)">
+       <div class="card-body">
+       <img class="card-img-top" ng-src="{{ad.file_name}}" style="width:100%">
+         <h3 class="w3-container w3-center card-title">{{ad.name}}</h3>
+         <p class="w3-container w3-center card-text">Current bid: {{ad.price}}kr </p>
+         <br>
+       </div>
+     </div>
+     <br>
+     <input type=submit class="btn btn-primary" ng-click="accept(ad)" value="Accept price"></input>
+   </div>
+ </div>

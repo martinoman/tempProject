@@ -1,0 +1,26 @@
+<div class = "container">
+  <section class="col-md-10 col-md-offset-1">
+    <div class="row" style="text-align: center;">
+      <h1>securities</h1>
+    </div>
+
+    <div class="row">
+      <div class="well" ng-repeat="sec in secs" ng-click="redirect(sec)">
+        <div class="row" style="text-align: center;">
+          <h4>
+            <span><a href="">{{sec.name}}</a></span>
+          </h4>
+        </div>
+      </div>
+    </div>
+
+<br>
+  <form ng-submit="done()">
+    <h3>Add Security</h3>
+    <h4>Name</h4>
+		<input class="form-control" type="text" ng-model="secName" id="loginInputField" required autofocus>
+		<input class="btn btn-default" type="submit" id="loginOKBtn" value="Ok">
+	</form>
+</section>
+
+</div>

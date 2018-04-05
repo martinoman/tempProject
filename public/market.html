@@ -1,0 +1,36 @@
+<div class="container">
+  <h3>{{secName}}</h3>
+  <hr>
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Orders</h4>
+        <div ng-repeat="order in orders" >
+            {{'Id: ' + order.id + ' | Type: ' + order.type + ' | Price: ' + order.price + ' | Quantity: ' + order.quantity}} <br>
+            <hr>
+        </div>
+      </div>
+      <div class="col-sm-6">
+          <h4>Trades</h4>
+          <div ng-repeat="trade in trades" >
+              {{'Price: ' + trade.price + ' | Quantity: ' + trade.quantity + ' | Date and time: ' + trade.timeStamp}} <br>
+              <hr>
+          </div>
+      </div>
+    </div>
+
+
+
+    <form ng-submit="done()">
+    <h3>Quantity</h3>
+    <input class="form-control" type="number" ng-model="orderQuantity" name="quantity" min="1">
+    <h3>Type</h3>
+    <select ng-model="selectedType">
+      <option>Buy</option>
+      <option>Sell</option>
+    </select>
+    <h3>Price</h3>
+    <input class="form-control" type="number" ng-model="price" min="1">
+    <input class="btn btn-default" type="submit" id="loginOKBtn" value="Ok">
+  </form>
+
+</div>

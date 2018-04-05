@@ -1,0 +1,30 @@
+<div class="container" style="text-align: center">
+  <h1>{{ad.name}}</h1>
+  <img class="adImg" ng-src="{{ad.file_name}}">
+  <h3>Price: {{ad.price}}kr</h3>
+  <h3>Description</h3>
+    {{ad.description}}
+  <br>
+  <hr>
+  <br>
+  <div class="bidBox">
+    <h2>
+      Bids on this ad! Better buy fast!
+    </h2>
+    <div ng-repeat = "bid in bids track by $index">
+      {{'Price: ' + bid.price}}
+      
+    </div>
+    <div class="text-box col-md-4 col-md-offset-4">
+      <form ng-submit="done()">
+        <h3>Bid</h3>
+        <h4>Price:</h4>
+        <input class="form-control" type="number" name="price" ng-model="price">
+        <br>
+        <input class="btn btn-default" type="submit" name="submit" value="Bid">
+        <br>
+      </form>
+    </div>
+  </div>
+
+</div>
